@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index2/index2",
+    "pages/commonShare/commonShare"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "canvas",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,15 @@
+/* pages/commonShare/commonShare.wxss */
+
+.commonShare {
+  padding-bottom: 152rpx;
+  background: #333;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  position: absolute;
+  -webkit-overflow-scrolling: touch;
+}
+
+.shareImg {
+  width: 100%;
+}

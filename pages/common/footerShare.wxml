@@ -1,0 +1,5 @@
+<template name="footer-share">
+  <view class="footer">
+    <button bindtap='share'>生成canvas</button>
+  </view>
+</template>

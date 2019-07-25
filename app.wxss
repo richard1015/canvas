@@ -1,0 +1,34 @@
+/**app.wxss**/
+@import "./footer.wxss";
+
+.country {
+  height: 64rpx;
+  width: 64rpx;
+  float: left;
+  margin: 0 35rpx 0 31rpx;
+}
+
+view {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.shareCanvas {
+  width: 100%;
+  /* height: 100%; */
+  background: #fff;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  right: 2000rpx;
+  top: 2000rpx;
+  /* height: 90%;
+  z-index: 999999; */
+}

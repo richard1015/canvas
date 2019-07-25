@@ -1,0 +1,6 @@
+<view class='commonShare'>
+  <image class='shareImg' mode="widthFix" src='{{url}}'></image>
+  <view class="footer">
+    <button bindtap='share'>保存并分享</button>
+  </view>
+</view>

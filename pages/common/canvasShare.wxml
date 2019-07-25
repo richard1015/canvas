@@ -1,0 +1,5 @@
+<template name="canvas-share">
+  <!-- <view style='width:0px;height:0px;overflow:hidden;opacity: 0;'> -->
+    <canvas style="height:{{shareCanvasItem.Height}}px !important;" class='shareCanvas' canvas-id="shareCanvas" binderror="canvasIdErrorCallback"></canvas>
+  <!-- </view> -->
+</template>

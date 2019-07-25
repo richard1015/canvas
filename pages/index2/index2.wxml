@@ -1,0 +1,48 @@
+<!--pages/index/index.wxml-->
+<view class='index'>
+
+  <!-- 公用canvas share -->
+  <import src="../common/canvasShare.wxml" />
+  <template data="{{shareCanvasItem}}" is="canvas-share" />
+
+  <!-- content begin -->
+  <view class='content'>
+    <view class='content_header'>
+      <view class='left' bindtap='toChoiceBank'>
+        <text>中国银行（测试数据）</text>
+      </view>
+    </view>
+    <view class='content_item'>
+      <view bindtap='toCurrencyTrend2' data-id='{{item.currencyId}}' wx:for="{{items}}" wx:key="" class="item">
+        <view class='introduction'>
+          <view class='left'>
+            <text>{{item.chName}}</text>
+            <text>{{item.abridge}}</text>
+          </view>
+          <image mode="aspectFit" src='/currencyImg/{{item.iconName}}'></image>
+        </view>
+        <view class='detail'>
+          <view class='detail_item'>
+            <text>钞买价</text>
+            <text>{{item.cashPrice}}</text>
+          </view>
+          <view class='detail_item'>
+            <text>汇买价</text>
+            <text>{{item.purchasePrice}}</text>
+          </view>
+          <view class='detail_item'>
+            <text>钞卖价</text>
+            <text>{{item.banknotePrice}}</text>
+          </view>
+          <view class='detail_item'>
+            <text>汇卖价</text>
+            <text>{{item.sellingPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- content end -->
+  <import src="../common/footerShare.wxml" />
+  <template is="footer-share" />
+</view>
