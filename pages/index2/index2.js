@@ -1,8 +1,9 @@
-// pages/index/index.js
+// 调用公用组件
 let {
   CanvasUtil,
   util
 } = getApp();
+// 测试数据引入
 const testData= require('../../test.js');
 Page({
   /**
@@ -11,7 +12,7 @@ Page({
   data: {
     shareCanvasItem: {
       Height: 5000
-    },//初始canvas高度，设置背景黑，防止动态生成内容过高
+    },//初始canvas高度，设置背景黑，此高度必须大于 动态生成内容高度，否则 无法全面覆盖背景
     items: [],
   },
   onLoad: function() {
@@ -56,7 +57,7 @@ Page({
 
     var context = wx.createCanvasContext('shareCanvas');
 
-    //背景颜色默认填充
+    //全局背景颜色默认填充
     context.setFillStyle('#333333');
     context.fillRect(0, 0, canvasWidth, canvasHeight);
 
@@ -105,19 +106,24 @@ Page({
       }
       //矩形颜色设置
       context.setFillStyle('#ffffff');
+      //调用绘制圆角矩形
       CanvasUtil.drawRoundedRect(context, padingLeftRightRect, currentLineHeight, rectWidth, rectHeight, rectRadius, true);
       //矩形上变背景颜色生成
       context.setFillStyle('#f7f7f7');
+      //调用绘制圆角矩形
       CanvasUtil.drawRoundedRect(context, padingLeftRightRect, currentLineHeight, rectWidth, topRectHeight, rectRadius, true);
 
-      //字体颜色
+      //币种字体颜色
       context.setFillStyle('#333333');
       context.font = `${(Rpx * 34).toFixed(0)}px PingFangSC-Regular`;
+      //币种文本绘制
       context.fillText(item.chName, padingLeftRightRect + Rpx * 26, currentLineHeight + Rpx * 30 + Rpx * 34);
+      //币种英文绘制
       context.fillText(item.abridge, padingLeftRightRect + Rpx * 26, currentLineHeight + Rpx * 30 + Rpx * 34 * 2 + Rpx * 10);
+      //绘制币种图案
       context.drawImage(`/currencyImg/${item.iconName}`, padingLeftRightRect + Rpx * 226, currentLineHeight + Rpx * 35, Rpx * 64, Rpx * 64);
 
-      //字体颜色
+      //价格字体颜色
       context.setFillStyle('#666666');
       context.font = `${(Rpx * 26).toFixed(0)}px PingFangSC-Regular`;
       context.fillText('钞买价', padingLeftRightRect + Rpx * 26, currentLineHeight + Rpx * 30 + Rpx * 34 * 2 + Rpx * 70, currentLineHeight + Rpx * 30 + Rpx * 34 * 2 + Rpx * 10);
@@ -127,7 +133,7 @@ Page({
       context.fillText('钞卖价', padingLeftRightRect + Rpx * 26, currentLineHeight + Rpx * 30 + Rpx * 34 * 2 + Rpx * 150, currentLineHeight + Rpx * 30 + Rpx * 34 * 2 + Rpx * 10);
 
       context.fillText('汇卖价', padingLeftRightRect + Rpx * 26, currentLineHeight + Rpx * 30 + Rpx * 34 * 2 + Rpx * 190, currentLineHeight + Rpx * 30 + Rpx * 34 * 2 + Rpx * 10);
-      //字体颜色
+      //价格值字体颜色
       context.setFillStyle('#333333');
       //钞买价
       context.fillText(item.cashPrice, padingLeftRightRect + Rpx * 204, currentLineHeight + Rpx * 30 + Rpx * 34 * 2 + Rpx * 70, currentLineHeight + Rpx * 30 + Rpx * 34 * 2 + Rpx * 10);
@@ -164,13 +170,13 @@ Page({
     context.setFillStyle('#EEC62E');
     context.font = `${(Rpx * 32).toFixed(0)}px PingFangSC-Regular`;
     //领取提示文本 绘制
-    context.fillText('汇率换算器', paddingLeft + Rpx * 43, currentLineHeight + Rpx * 90);
+    context.fillText('测试canvas', paddingLeft + Rpx * 43, currentLineHeight + Rpx * 90);
 
     //字体颜色
     context.setFillStyle('#999999');
     context.font = `${(Rpx * 28).toFixed(0)}px PingFangSC-Regular`;
     //领取提示文本 绘制
-    context.fillText('留学、出境游、炒汇必备神器', paddingLeft + Rpx * 43, currentLineHeight + Rpx * 130);
+    context.fillText('出境游、炒汇必备神器', paddingLeft + Rpx * 43, currentLineHeight + Rpx * 130);
 
     //内容行高控制
     currentLineHeight += Rpx * 220;
